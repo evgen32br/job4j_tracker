@@ -7,5 +7,4 @@
 По мере прохождения курса данное описание будет дополняться.
 Контактные данные 4ibo32@mail.ru .
 
-[![Build Status](https://app.travis-ci.com/evgen32br/job4j_tracker.svg?branch=master)]
-(https://app.travis-ci.com/evgen32br/job4j_tracker)
+[![Build Status](https://app.travis-ci.com/evgen32br/job4j_tracker.svg?branch=master)](https://app.travis-ci.com/evgen32br/job4j_tracker)
