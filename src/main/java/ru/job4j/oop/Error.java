@@ -1,27 +1,21 @@
 package ru.job4j.oop;
 
 public class Error {
-
-    private boolean activ;
-
+    private boolean active;
     private int status;
-
     private String message;
 
     public Error() {
-        activ = true;
-        status = 222;
-        message = " Добро пожаловать! ";
     }
 
-    public Error(boolean activ, int status, String message) {
-        this.activ = activ;
+    public Error(boolean active, int status, String message) {
+        this.active = active;
         this.status = status;
         this.message = message;
     }
 
     public void printInfo() {
-        System.out.println("Состояние " + activ);
+        System.out.println("Состояние " + active);
         System.out.println("Идентификатор пользователя " + status);
         System.out.println("Сообщение системы " + message);
     }
