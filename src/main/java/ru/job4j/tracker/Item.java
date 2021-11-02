@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Item {
     private int id;
@@ -21,8 +20,6 @@ public class Item {
     }
 
     public LocalDateTime getCreated() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        System.out.println(created.format(formatter));
         return created;
     }
 
