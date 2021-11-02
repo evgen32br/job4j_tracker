@@ -7,11 +7,11 @@ public class JSONReport extends TextReport {
                 +
                 System.lineSeparator()
                 +
-                "   name : name,"
+                '"' +  "name" + '"' + " : " + '"' + "name," + '"'
                 +
                 System.lineSeparator()
                 +
-                "   body : body"
+                '"' +  "name" + '"' + " : " + '"' + "name," + '"'
                 +
                 System.lineSeparator()
                 +
