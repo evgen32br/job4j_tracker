@@ -18,3 +18,7 @@ notifications:
       - 4ibo32@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
+
+    env:
+      global:
+        - CODECOV_TOKEN ="9fab70eb-fe82-474f-9dcf-72157df48197"
