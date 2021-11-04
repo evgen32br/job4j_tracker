@@ -21,7 +21,7 @@ public class Library {
             System.out.println(title.getName() + "  " + title.getPages());
         }
         for (Book title : book) {
-            if (title.getName().equals("Чистый код")) {
+            if ("Чистый код".equals(title.getName())) {
                 System.out.println(System.lineSeparator() + "Книга которую мы искали");
                 System.out.println(title.getName() + " - " + title.getPages());
                 break;
