@@ -9,7 +9,7 @@ public class SearchIdAction implements UserAction {
 
     @Override
     public String name() {
-        return "Поиск заявку по идентификатору";
+        return "Поиск заявки по идентификатору";
     }
 
     @Override
