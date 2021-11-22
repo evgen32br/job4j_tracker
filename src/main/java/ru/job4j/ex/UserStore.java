@@ -10,14 +10,14 @@ public class UserStore {
             }
         }
         if (user == null) {
-            throw new UserNotFoundException();
+            throw new UserNotFoundException("Пользователь не найден");
         }
         return user;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
         if (!user.isValid() || user.getUsername().length() < 3) {
-            throw new UserInvalidException();
+            throw new UserInvalidException("Пользователь не валидный");
         }
         return true;
     }
@@ -32,10 +32,10 @@ public class UserStore {
                 System.out.println(user.getUsername());
                 System.out.println("Этот пользователь имеет доступ");
             }
-        } catch (UserInvalidException q) {
-            System.out.println("Пользователь не валидный");
-        } catch (UserNotFoundException n) {
-            System.out.println("Пользователь не найден");
+        } catch (UserInvalidException uie) {
+            uie.printStackTrace();
+        } catch (UserNotFoundException unfe) {
+           unfe.printStackTrace();
         }
     }
 }
