@@ -2,6 +2,9 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -17,7 +20,7 @@ public class StartUITest {
         UserAction[] actions = {
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         assertThat(out.toString(), is(
                 "Меню:" + System.lineSeparator()
                         + "0. Выход" + System.lineSeparator()
@@ -38,7 +41,7 @@ public class StartUITest {
                 new EditAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -67,7 +70,7 @@ public class StartUITest {
                 new ShowAllAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -96,7 +99,7 @@ public class StartUITest {
                 new SearchIdAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -123,7 +126,7 @@ public class StartUITest {
                 new SearchIdAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -150,7 +153,7 @@ public class StartUITest {
                 new SearchNameAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -177,7 +180,7 @@ public class StartUITest {
                 new SearchNameAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Меню:" + ln
@@ -199,9 +202,9 @@ public class StartUITest {
                 new String[] {"5", "0"}
         );
         Tracker tracker = new Tracker();
-        UserAction[] actions = new UserAction[]{
-                new Exit(out)
-        };
+        List<UserAction> actions = new ArrayList<>();
+              actions.add(new Exit(out));
+
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
