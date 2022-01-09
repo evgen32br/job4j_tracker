@@ -27,4 +27,14 @@ public class OrderConvertTest {
         HashMap<String, Order> map = OrderConvert.process(orders);
         assertThat(map.get("128"), is(new Order("128", "Two")));
     }
+
+    @Test
+    public void whenDoubleOrder() {
+        List<Order> orders = new ArrayList<>();
+        orders.add(new Order("3sfe", "Dress"));
+        orders.add(new Order("128", "Two"));
+        orders.add(new Order("3sfe", "Dress"));
+        HashMap<String, Order> map = OrderConvert.process(orders);
+        assertThat(map.size(), is(2));
+    }
 }
