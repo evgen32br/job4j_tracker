@@ -32,7 +32,7 @@ public class ProfilesTest {
                 new Profile(bryansk),
                 new Profile(tula)
         );
-        List<Address> result = Profiles.collect(profiles);
+        List<Address> result = Profiles.collectSortWithoutDuplicate(profiles);
         List<Address> expected = Arrays.asList(bryansk, orel, tula);
         assertEquals(expected, result);
     }
