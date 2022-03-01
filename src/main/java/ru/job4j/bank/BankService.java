@@ -41,8 +41,6 @@ public class BankService {
      * Метод ищет пользователя по номеру паспорта.
      * @param passport входящий параметр номера паспорта.
      * @return возвращает значение: если клиент найден - объект типа User, если не найден - null.
-     */
-
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
             if (passport.equals(user.getPassport())) {
@@ -50,6 +48,14 @@ public class BankService {
             }
         }
         return null;
+    }*/
+
+    public User findByPassport(String passport) {
+        return users.keySet()
+                .stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
     /**
      * Метод осуществляет поиск клиента по реквизитам.
@@ -58,9 +64,7 @@ public class BankService {
      * и в этом списке ищем нужный счет.
      * @param passport входящий параметр номера паспорта клиента типа String
      * @param requisite входящий параметр реквизитов счета типа String
-     * @return возвращает найденный счет клиента типа Account, если счет не найден возвращает null.
-     */
-
+     * @return возвращает найденный счет клиента типа Account, если счет не найден возвращает null
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
@@ -69,6 +73,18 @@ public class BankService {
                     return account;
                 }
             }
+        }
+        return null;
+    }*/
+
+    public Account findByRequisite(String passport, String requisite) {
+        User user = findByPassport(passport);
+        if (user != null) {
+            return users.get(user)
+                    .stream()
+                    .filter(account -> account.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
