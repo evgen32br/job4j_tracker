@@ -87,13 +87,11 @@ public class BankService {
 
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<User> user = findByPassport(passport);
-        Optional<Account> val = Optional.empty();
         return user
-                .map(value -> users.get(value)
+                .flatMap(value -> users.get(value)
                 .stream()
                 .filter(account -> account.getRequisite().equals(requisite))
-                .findFirst())
-                .orElse(val);
+                .findFirst());
     }
 
     public void deleteUser(User user) {
